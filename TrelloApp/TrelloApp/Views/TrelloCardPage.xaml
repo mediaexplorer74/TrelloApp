@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TrelloApp.Views.TrelloCardPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout>
+                <Frame BackgroundColor="WhiteSmoke" Margin="8" Padding="0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Label x:Name="lblListName" Text="(list name)" TextColor="#333333" FontAttributes="Bold" VerticalOptions="Center" Margin="12,0" />
+                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="Center">
+                        <Label Text="Closed cards:" FontSize="Micro" VerticalOptions="Center"  />
+                        <Switch x:Name="switchClosedCards" Toggled="switchClosedCards_Toggled" />
+                    </StackLayout>-->
+
+                        <ListView ItemSelected="lvwCards_ItemSelected" x:Name="lvwCards" Grid.Row="1" BackgroundColor="#e2e4e6" RowHeight="65" SeparatorColor="Transparent">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame BackgroundColor="White" Margin="4" Padding="8,0">
+                                            <Grid RowSpacing="0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                    <RowDefinition Height="18" />
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding Name}" VerticalOptions="Center" TextColor="#333333" />
+                                                <!--handle this button click to create a PUT request that changes the card's closed state-->
+                                                <Button Clicked="btnCloseCard_Clicked" Text="CLOSE" FontSize="Micro" x:Name="btnCloseCard" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" />
+                                                <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                                    <!--<Image Source="http://www.iconsdb.com/icons/preview/gray/comments-xxl.png" VerticalOptions="Center" HeightRequest="9"  />-->
+                                                    <Label FontSize="Micro" Text="comments:" />
+                                                    <Label Text="{Binding CardInfo.NumComments}" TextColor="Gray" FontSize="Micro"  VerticalOptions="Start" />
+                                                    <!--<Image Source="http://www.iconsdb.com/icons/preview/gray/attach-2-xxl.png" VerticalOptions="Center" HeightRequest="9" />-->
+                                                    <Label FontSize="Micro" Text="attachments:" />
+                                                    <Label Text="{Binding CardInfo.NumAttachments}" TextColor="Gray" FontSize="Micro"  VerticalOptions="Start" />
+                                                </StackLayout>
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <Label x:Name="lblAddCard" Grid.Row="2" VerticalOptions="Center" Margin="12,0" TextColor="Gray" Text="Add a card..." />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

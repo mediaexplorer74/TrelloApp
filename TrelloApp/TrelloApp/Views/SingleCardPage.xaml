@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TrelloApp.Views.SingleCardPage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="Start">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label x:Name="lblList" Text="List name" TextColor="Black" FontSize="Large" Margin="19,8" Grid.Row="0" />
+            <Label x:Name="lblBoard" Text="Board name" BackgroundColor="Wheat" HorizontalOptions="Start" FontSize="Small" Margin="19,4,8,8" Grid.Row="1" />
+            <Grid Margin="8" Padding="8" BackgroundColor="White" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Frame OutlineColor="Gray" Grid.RowSpan="2" Padding="0" WidthRequest="52" >
+                    <Image x:Name="imgAvatar" Source="https://qsf.ec.quoracdn.net/-3-images.new_grid.profile_pic_default_small.png-26-902da2b339fedf49.png" VerticalOptions="Fill" HorizontalOptions="Fill" />
+                </Frame>
+                <Label x:Name="lblFullName" Text="Full Name" FontSize="Large" Grid.Column="1" />
+                <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                    <Label Text="@XamarinUser" />
+                    <Label x:Name="lblUsername" Text="Xamarin username" />
+                </StackLayout>
+                <Editor x:Name="editName" Keyboard="Text" FontSize="Medium" VerticalOptions="Fill" HorizontalOptions="Fill" Grid.ColumnSpan="2" Grid.Row="2" />
+            </Grid>
+            <Grid Grid.Row="3" Margin="8,0,8,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnCancel" Text="Cancel" Clicked="btnCancel_Clicked"/>
+                <Button x:Name="btnSave" Text="Save" Grid.Column="1" Clicked="btnSave_Clicked"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
