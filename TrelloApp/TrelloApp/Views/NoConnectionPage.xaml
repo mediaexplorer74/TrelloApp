@@ -8,9 +8,18 @@
              x:Class="TrelloApp.Views.NoConnectionPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="No connection? Auth problems? Register at Trello service as Developer and get your API Key and User Token."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text = "API Key"/>
+            <Entry x:Name="ApiKey" />
+
+            <Label Text = "User Token"/>
+            <Entry x:Name="UserToken" />
+
+            <Button x:Name="SaveSettings" Text="Save settings" Clicked="OnSaveSettingsButtonClick" />
+  
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

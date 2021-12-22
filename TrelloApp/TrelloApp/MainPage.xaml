@@ -5,27 +5,35 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TrelloApp.MainPage">
-    <ListView x:Name="lvwBoards" SeparatorColor="White" ItemSelected="lvwBoards_ItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="45" />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Frame CornerRadius="7" Margin="8" BackgroundColor='Gray' />
-                        <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" VerticalOptions="Center" />
-                    </Grid>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-    <ContentPage.Content>
+    <Grid>
+       <StackLayout>
+            <Button x:Name="Settings" IsEnabled="false" IsVisible="false" Text="Settings..." Clicked="OnSettingsButtonClick" />
+
+            <ListView x:Name="lvwBoards" SeparatorColor="White" ItemSelected="lvwBoards_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Frame CornerRadius="7" Margin="8" BackgroundColor='Gray' />
+                                <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" VerticalOptions="Center" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Grid>
+
+            <!--ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content-->
+
 </ContentPage>

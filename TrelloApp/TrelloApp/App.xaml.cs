@@ -8,6 +8,8 @@ namespace TrelloApp
 {
     public partial class App : Application
     {
+        public static bool FirstInit = true;
+
         public TrelloNoConnectionPage TrelloNoConnectionPage { get; private set; }
 
         public App()

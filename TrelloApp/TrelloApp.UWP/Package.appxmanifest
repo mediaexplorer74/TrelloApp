@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="b04854a7-ee72-4450-b96f-94fbb16c48c4" Publisher="CN=MediaExplorer" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="TrelloApp-1" Publisher="CN=media" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="dc0cc741-fd3e-485c-81be-688155580690" PhonePublisherId="00005500-0000-0000-0000-005550000000" />
   <Properties>
     <DisplayName>TrelloApp.UWP</DisplayName>
-    <PublisherDisplayName>cffc6758-96f7-4fa2-9217-a08e7b12292f</PublisherDisplayName>
+    <PublisherDisplayName>mediaexplorer</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -27,7 +27,6 @@
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="portrait" />
           <uap:Rotation Preference="landscape" />
-          <uap:Rotation Preference="portraitFlipped" />
           <uap:Rotation Preference="landscapeFlipped" />
         </uap:InitialRotationPreference>
       </uap:VisualElements>
